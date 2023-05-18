@@ -6,8 +6,11 @@ class Solution(object):
             if num in dict:
                 return [index,dict[num]]
             else:
-                dict[target-num] = index
-        return []
-
+                dict[target-num]=index
+                
+        
+        
+        
+        
 
         
