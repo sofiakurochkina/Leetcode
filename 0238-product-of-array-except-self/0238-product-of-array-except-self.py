@@ -1,25 +1,31 @@
 class Solution(object):
     def productExceptSelf(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: List[int]
-        """
-
-        if not nums or len(nums)==1:
-            return nums
         
-        prefix = [1]
-        postfix = [1]
-
-        for i in range(1,len(nums)):
-            prefix.append(prefix[i-1]*nums[i-1])
-            postfix.append(postfix[i-1]*nums[len(nums)-i])
+        output = [1] * len(nums)
         
-        postfix = postfix[::-1]
-
-        print(prefix)
-        print(postfix)
-
-        return [prefix[i]*postfix[i] for i in range(len(nums))]
-
+        product = 1
+        for i in range(len(nums)):
+            output[i] *= product
+            product *= nums[i]
+        
+        print(output)
+        
+        product = 1
+        for i in reversed(range(len(nums))):
+            output[i] *= product
+            product *= nums[i]
+        
+        print(output)
+        return(output)
+            
+            
+        
+        """ 
+        
+        1 1 2 6 -- pre
+        
+        24 12 8  6 -- post  
+        
+        """
+        
         
