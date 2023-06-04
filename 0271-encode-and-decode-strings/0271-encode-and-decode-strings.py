@@ -4,7 +4,7 @@ class Codec:
         res = ''
         for word in strs:
             res += str(len(word)) +'#' + word
-        
+        print(res)
         return res
         
     def decode(self, s):
