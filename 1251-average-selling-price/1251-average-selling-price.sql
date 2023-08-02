@@ -2,7 +2,7 @@
 
 SELECT 
 Prices.product_id,
-ROUND(SUM(Prices.price*UnitsSold.units)/sum(UnitsSold.units),2) as average_price
+ROUND(SUM(Prices.price*UnitsSold.units)/SUM(UnitsSold.units),2) as average_price
 FROM Prices
 JOIN UnitsSold
 ON Prices.product_id = UnitsSold.product_id
